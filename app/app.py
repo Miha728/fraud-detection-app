@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
+import sklearn
+
+st.write("sklearn:", sklearn.__version__)
 
 st.set_page_config(page_title="Fraud Detection App", page_icon="💳", layout="centered")
 
@@ -237,3 +240,4 @@ if st.button("Check Transaction"):
         st.error(str(e))
     except Exception as e:
         st.error(f"Unexpected error: {e}")
+
