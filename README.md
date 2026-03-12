@@ -53,3 +53,35 @@ Run the app:
 ```
 streamlit run app/app.py
 ```
+
+
+## Model Comparison
+
+This project includes a comparison between multiple machine learning models trained on the **Credit Card Fraud Detection dataset (Kaggle)**.
+
+Models evaluated:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+Evaluation metrics used:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+- PR-AUC
+
+The comparison is generated using the script:
+
+python src/compare_models.py --data data/creditcard.csv
+
+The results are saved in:
+
+model/model_comparison.json  
+model/model_comparison.csv
+
+The Streamlit application includes a **Model Comparison dashboard** where these results are visualized.
+
