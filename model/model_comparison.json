@@ -1,0 +1,35 @@
+{
+  "dataset": "creditcard.csv",
+  "test_size": 0.2,
+  "random_state": 42,
+  "ranking_metric": "pr_auc",
+  "results": [
+    {
+      "model": "Random Forest",
+      "accuracy": 0.9994,
+      "precision": 0.8247,
+      "recall": 0.8163,
+      "f1_score": 0.8205,
+      "roc_auc": 0.9628,
+      "pr_auc": 0.8555
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.9755,
+      "precision": 0.061,
+      "recall": 0.9184,
+      "f1_score": 0.1144,
+      "roc_auc": 0.9721,
+      "pr_auc": 0.719
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.9806,
+      "precision": 0.0693,
+      "recall": 0.8265,
+      "f1_score": 0.1279,
+      "roc_auc": 0.9075,
+      "pr_auc": 0.475
+    }
+  ]
+}
