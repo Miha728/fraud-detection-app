@@ -9,6 +9,11 @@ Demo application that simulates credit card fraud detection using a machine lear
 * Adjustable fraud alert threshold
 * Interactive web interface
 
+## Live Demo
+
+Test the application here:
+https://smart-fraud-detector.streamlit.app
+
 ## Demo Interface
 
 ![App Screenshot](assets/app_screenshot.png)
