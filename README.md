@@ -18,75 +18,55 @@ https://smart-fraud-detector.streamlit.app
 
 ![App Screenshot](assets/app_screenshot.png)
 
-## How it works
 
-The application combines two signals:
+## 📊 Dataset
+
+- Source: Kaggle — Credit Card Fraud Detection
+- 284,807 transactions, 492 fraudulent (0.17% fraud rate)
+- Highly imbalanced dataset — evaluated primarily on Recall and PR-AUC
+
+## 🤖 Model Results
+
+| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC | PR-AUC |
+|---|---|---|---|---|---|---|
+| **Random Forest** | 99.94% | 82.47% | 81.63% | 82.05% | 96.28% | **85.55%** |
+| Logistic Regression | 97.55% | 6.10% | 91.84% | 11.44% | 97.21% | 71.90% |
+| Decision Tree | 98.06% | 6.93% | 82.65% | 12.79% | 90.75% | 47.50% |
+
+> Selected model: **Random Forest** — best balance between Precision and Recall, with a PR-AUC of 85.55% on a heavily imbalanced dataset.
+
+## ⚙️ How It Works
 
 **1. Machine Learning Model**
 
-A logistic regression model trained on anonymized credit card transaction features.
+Random Forest trained on anonymized features from real credit card transactions.
 
 **2. Behavioral Risk Rules**
 
-Additional fraud indicators:
+Additional fraud signals:
+- Transactions after 10 PM
+- Online payments
+- New device used
+- High transaction frequency in the last 24 hours
+- Transaction from a foreign country
 
-* transactions after 10 PM
-* online payments
-* new device used
-* many transactions in last 24 hours
-* foreign country transaction
+Both signals are combined into a **final fraud score**.
 
-These signals are combined into a **final fraud score**.
+## 🛠️ Tech Stack
 
-## Tech Stack
+- Python · Streamlit · Scikit-learn · Pandas
 
-* Python
-* Streamlit
-* Scikit-learn
-* Pandas
+## ▶️ Run Locally
 
-## Run locally
-
-Install dependencies:
-
-```
 pip install -r requirements.txt
-```
-
-Run the app:
-
-```
 streamlit run app/app.py
-```
 
+## 📁 Project Structure
 
-## Model Comparison
-
-This project includes a comparison between multiple machine learning models trained on the **Credit Card Fraud Detection dataset (Kaggle)**.
-
-Models evaluated:
-
-- Logistic Regression
-- Decision Tree
-- Random Forest
-
-Evaluation metrics used:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC
-- PR-AUC
-
-The comparison is generated using the script:
-
-python src/compare_models.py --data data/creditcard.csv
-
-The results are saved in:
-
-model/model_comparison.json  
-model/model_comparison.csv
-
-The Streamlit application includes a **Model Comparison dashboard** where these results are visualized.
-
+fraud-detection-app/
+├── app/          # Streamlit application
+├── assets/       # Screenshots
+├── model/        # Saved models + comparison results
+├── src/          # Model comparison script
+├── requirements.txt
+└── README.md
